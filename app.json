@@ -1,0 +1,39 @@
+{
+  "expo": {
+    "name": "ShopXP",
+    "slug": "shopxp",
+    "platforms": ["ios", "android", "web"],
+    "version": "1.0.1",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": false
+    },
+    "android": {
+      "package": "com.larstack.shopxp",
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyCl35awgvcdHhJUeujhwoNZBm-BZCZZ164" //TODO:fijarse si cambiarlo
+        }
+      },
+      "permissions": [
+        "CAMERA_ROLL",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION"
+      ]
+    },
+    "description": ""
+  }
+}
