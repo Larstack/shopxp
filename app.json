@@ -22,7 +22,7 @@
       "package": "com.larstack.shopxp",
       "config": {
         "googleMaps": {
-          "apiKey": "AIzaSyCl35awgvcdHhJUeujhwoNZBm-BZCZZ164" //TODO:fijarse si cambiarlo
+          "apiKey": "AIzaSyCaFRiPrF6ol7xET7UgnyoDyPoSRRaiftg"
         }
       },
       "permissions": [
