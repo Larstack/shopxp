@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, ScrollView } from "react-native";
 import { AirbnbRating, Button, Input } from "react-native-elements";
 import Toast from "react-native-easy-toast";
 import Loading from "../../components/Loading";
@@ -74,44 +74,55 @@ export default function AddReviewShop(props) {
   };
 
   return (
-    <View style={styles.viewBody}>
-      <View style={styles.viewRating}>
-        <AirbnbRating
-          count={5}
-          reviews={["Pésimo", "Deficiente", "Normal", "Muy Bueno", "Excelente"]}
-          defaultRating={0}
-          size={35}
-          onFinishRating={(value) => {
-            setRating(value);
-          }}
-        />
+    <ScrollView style={styles.scrollView}>
+      <View style={styles.viewBody}>
+        <View style={styles.viewRating}>
+          <AirbnbRating
+            count={5}
+            reviews={[
+              "Pésimo",
+              "Deficiente",
+              "Normal",
+              "Muy Bueno",
+              "Excelente",
+            ]}
+            defaultRating={0}
+            size={35}
+            onFinishRating={(value) => {
+              setRating(value);
+            }}
+          />
+        </View>
+        <View style={styles.formReview}>
+          <Input
+            placeholder="Titulo"
+            containerStyle={styles.input}
+            onChange={(e) => setTitle(e.nativeEvent.text)}
+          />
+          <Input
+            placeholder="Comentario..."
+            multiline={true}
+            inputContainerStyle={styles.textArea}
+            onChange={(e) => setReview(e.nativeEvent.text)}
+          />
+          <Button
+            title="Enviar Comentario"
+            containerStyle={styles.btnContainer}
+            buttonStyle={styles.btn}
+            onPress={addRevew}
+          />
+        </View>
+        <Toast ref={toastRef} position="center" opacity={0.9} />
+        <Loading isVisible={isLoading} text="Enviando comenario" />
       </View>
-      <View style={styles.formReview}>
-        <Input
-          placeholder="Titulo"
-          containerStyle={styles.input}
-          onChange={(e) => setTitle(e.nativeEvent.text)}
-        />
-        <Input
-          placeholder="Comentario..."
-          multiline={true}
-          inputContainerStyle={styles.textArea}
-          onChange={(e) => setReview(e.nativeEvent.text)}
-        />
-        <Button
-          title="Enviar Comentario"
-          containerStyle={styles.btnContainer}
-          buttonStyle={styles.btn}
-          onPress={addRevew}
-        />
-      </View>
-      <Toast ref={toastRef} position="center" opacity={0.9} />
-      <Loading isVisible={isLoading} text="Enviando comenario" />
-    </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
+  scrollView: {
+    height: "100%",
+  },
   viewBody: {
     flex: 1,
   },

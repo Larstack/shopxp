@@ -163,18 +163,18 @@ function ShopInfo(props) {
       iconType: "material-community",
       action: null,
     },
-    {
-      text: "111 222 333",
-      iconName: "phone",
-      iconType: "material-community",
-      action: null,
-    },
-    {
-      text: "leonardo.ricciotti@gmail.com",
-      iconName: "at",
-      iconType: "material-community",
-      action: null,
-    },
+    // {
+    //   text: "111 222 333",
+    //   iconName: "phone",
+    //   iconType: "material-community",
+    //   action: null,
+    // },
+    // {
+    //   text: "leonardo.ricciotti@gmail.com",
+    //   iconName: "at",
+    //   iconType: "material-community",
+    //   action: null,
+    // },
   ];
 
   return (
